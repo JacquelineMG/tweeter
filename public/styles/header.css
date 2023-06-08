@@ -1,0 +1,20 @@
+body header {
+  height: 520px;
+  width: 100vw;
+  background-color: #e9b24c;
+  background-image: url("/images/swirl.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h2#user-name {
+  margin-top: -35px;
+  font-family: 'Source Code Pro', 'sans-serif';
+
+}
+
+div#user-avatar {
+  margin-top: 120px;
+}

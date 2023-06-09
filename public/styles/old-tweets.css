@@ -1,0 +1,89 @@
+.tweet {
+  border: 5px solid black;
+  padding: 1em;
+  width: 90vw;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#tweet-container .poster-name {
+  display: flex;
+  flex-direction: row;
+}
+#tweet-container header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#tweet-container footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between ;
+}
+
+.poster-name p{
+margin: 6px;
+margin-top: 16px;
+font-weight: 300;
+font-size: 25px;
+font-family: 'Source Code Pro', 'sans-serif';
+color: black;
+}
+
+.poster-name img {
+  width: 60px;
+  height: 60px;
+  margin: 3px
+}
+
+.poster-id p{
+margin: 6px;
+margin-top: 16px;
+font-weight: 600;
+font-size: 25px;
+font-family: 'Source Code Pro', 'sans-serif';
+color: rgb(159, 157, 157);
+}
+
+.tweet-text-box {
+  display: flex;
+  justify-content: center;
+}
+
+.tweet-text {
+  background-color: #f4f1ec;
+  border: none;
+  border-bottom: 5px solid black;
+  width: 85vw;
+  height: 60px;
+  font-family: 'Source Code Pro', 'sans-serif';
+  font-size: 20px;
+  color:black;
+  font-weight: 600;
+  padding-left: 2px;
+  padding-right: 2px;
+  margin-top: 40px
+}
+
+
+footer .date {
+  font-size: 15px;
+  font-family:'Source Code Pro', 'sans-serif';
+  font-weight: 600;
+  padding-left: 15px;
+}
+
+footer .buttons {
+  padding-right: 15px;
+}
+
+.buttons .flag, .share, .like {
+  border: none;
+  padding: 1px;
+  font-size: 15px;
+  color: rgb(159, 157, 157)
+}
+
+
+

@@ -5,9 +5,9 @@ main.container {
   font-family: 'Source Code Pro', 'sans-serif';
 }
 
-main.container section.new-tweet form label {
+main.container form label {
   font-weight: 600;
-  font-size: 25px
+  font-size: 20px
 }
 
 .sub-heading {
@@ -26,7 +26,8 @@ main.container section.new-tweet form label {
   background-image: url("/images/bright-squares.png");
   font-family: 'Bungee', 'sans-serif';
   color: white;
-  padding: 5px
+  padding: 5px;
+  margin-bottom: 2em;
 }
 
 #tweet-text {

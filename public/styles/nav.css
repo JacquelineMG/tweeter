@@ -27,6 +27,6 @@ body nav {
   align-items: center;
 }
 
-.fa-solid, .fa-angles-down {
+#nav-arrows {
   color: red;
 }

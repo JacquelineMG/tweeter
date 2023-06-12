@@ -6,6 +6,10 @@
   margin-bottom: 10px;
 }
 
+.hover {
+  box-shadow: 5px 5px 5px #e9b24c;
+}
+
 #tweet-container .poster-name {
   display: flex;
   flex-direction: row;
@@ -20,7 +24,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between ;
-}
+} 
 
 .poster-name p{
 margin: 6px;
@@ -31,10 +35,11 @@ font-family: 'Source Code Pro', 'sans-serif';
 color: black;
 }
 
-.poster-name img {
+.poster-name .image {
   width: 60px;
   height: 60px;
-  margin: 3px
+  margin: 3px;
+  content: url("/images/bird-avatar-chicken-d.png");
 }
 
 .poster-id p{
@@ -67,7 +72,7 @@ color: rgb(159, 157, 157);
 }
 
 
-footer .date {
+footer p {
   font-size: 15px;
   font-family:'Source Code Pro', 'sans-serif';
   font-weight: 600;
@@ -78,11 +83,33 @@ footer .buttons {
   padding-right: 15px;
 }
 
-.buttons .flag, .share, .like {
+.flag {
   border: none;
   padding: 1px;
   font-size: 15px;
-  color: rgb(159, 157, 157)
+  color: rgb(159, 157, 157);
+}
+
+.share {
+  border: none;
+  padding: 1px;
+  font-size: 15px;
+  color: rgb(159, 157, 157);
+}
+
+.like {
+  border: none;
+  padding: 1px;
+  font-size: 15px;
+  color: rgb(159, 157, 157);
+}
+
+.glow {
+  color: #e9b24c;
+}
+
+.clicked {
+  color: #4056A1;
 }
 
 

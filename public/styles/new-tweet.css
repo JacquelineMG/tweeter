@@ -3,11 +3,14 @@ main.container {
   justify-content: flex-start;
   align-items: flex-start;
   font-family: 'Source Code Pro', 'sans-serif';
+  color: black;
+  font-weight: 300;
 }
 
-main.container form label {
+main.container ::placeholder {
   font-weight: 600;
-  font-size: 20px
+  font-size: 25px;
+  color: rgb(107, 106, 106);
 }
 
 .sub-heading {

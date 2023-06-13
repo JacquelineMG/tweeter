@@ -23,6 +23,7 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Code Pro', 'sans-serif';
+  width: 97.8vw;
 }
 
 main {
@@ -30,7 +31,7 @@ main {
   flex-direction: column;
   align-items: center;
   background-color: #f4f1ec;
-  width: 90%
+  width: 90vw;
 }
 
 /*

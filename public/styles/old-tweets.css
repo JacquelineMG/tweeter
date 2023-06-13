@@ -35,11 +35,10 @@ font-family: 'Source Code Pro', 'sans-serif';
 color: black;
 }
 
-.poster-name .image {
+.poster-name .poster-img {
   width: 60px;
   height: 60px;
   margin: 3px;
-  content: url("/images/bird-avatar-chicken-d.png");
 }
 
 .poster-id p{

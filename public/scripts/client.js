@@ -8,7 +8,7 @@
 $(document).ready(function() {
 
 
-  // CREATE TWEETS //
+  // CREATE TWEET ELEMENT  FUNCTION//
 
 
   // creatTweetElement function takes in tweet object and returns a tweet <article> element containing entire HTML structure of the tweet
@@ -94,7 +94,7 @@ $(document).ready(function() {
   }
 
 
- // RENDER TWEETS //
+ // RENDER TWEETS FUNCTION //
 
  // Loop through tweets data object
  // Use createTweetElement to create tweet element for each tweet
@@ -105,9 +105,25 @@ $(document).ready(function() {
     const returnValue = createTweetElement(tweet)
     $(`#tweet-container`).append(returnValue)
   }
- }
+};
 
- renderTweets(data)
+renderTweets(data)
+
+
+ // EVENT LISTENER FOR TWEET SUBMITS //
+
+ // Listen for new tweet submissions
+
+  $("#submit-tweet").on("submit", function(event){
+    event.preventDefault();
+    const tweetData = $(this).serialize();
+    
+
+    // Post tweet data to the server
+
+    $.post("/tweets", tweetData);
+
+  });
 
 
 

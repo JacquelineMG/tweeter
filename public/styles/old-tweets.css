@@ -6,7 +6,7 @@
   margin-bottom: 10px;
 }
 
-.hover {
+.tweet:hover {
   box-shadow: 5px 5px 5px #e9b24c;
 }
 
@@ -60,31 +60,34 @@ color: rgb(159, 157, 157);
   border: none;
   border-bottom: 5px solid black;
   width: 85vw;
-  height: 60px;
+  height: auto;
   font-family: 'Source Code Pro', 'sans-serif';
   font-size: 20px;
   color:black;
   font-weight: 600;
   padding-left: 2px;
   padding-right: 2px;
+  padding-bottom: 15px;
   margin-top: 40px
 }
 
 
-footer p {
+footer .date span {
   font-size: 15px;
   font-family:'Source Code Pro', 'sans-serif';
   font-weight: 600;
   padding-left: 15px;
 }
 
-footer .buttons {
+footer .icons {
   padding-right: 15px;
 }
 
 .flag {
   border: none;
   padding: 1px;
+  padding-left: 7px;
+  padding-right: 7px;
   font-size: 15px;
   color: rgb(159, 157, 157);
 }
@@ -92,6 +95,8 @@ footer .buttons {
 .share {
   border: none;
   padding: 1px;
+  padding-left: 7px;
+  padding-right: 7px;
   font-size: 15px;
   color: rgb(159, 157, 157);
 }
@@ -99,12 +104,14 @@ footer .buttons {
 .like {
   border: none;
   padding: 1px;
+  padding-left: 7px;
+  padding-right: 7px;
   font-size: 15px;
   color: rgb(159, 157, 157);
 }
 
-.glow {
-  color: #e9b24c;
+.hover {
+  color: #e9b24c
 }
 
 .clicked {

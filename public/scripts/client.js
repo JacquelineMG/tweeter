@@ -7,48 +7,24 @@
 
 $(document).ready(function() {
 
+  // Hide error messages when user is behaving
 
+  $("#error-empty").hide();
+  $("#error-long").hide();
+
+
+  // ESCAPE FUNCTION //
+
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+ 
   // CREATE TWEET ELEMENT  FUNCTION//
 
-
   // creatTweetElement function takes in tweet object and returns a tweet <article> element containing entire HTML structure of the tweet
-
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "/images/bird-avatar-flamingo-d.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "/images/bird-avatar-tucan-d.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    },
-    {
-      "user": {
-        "name": "Hennie White",
-        "avatars": "/images/bird-avatar-chicken-d.png"
-        ,
-        "handle": "@clucker"
-      },
-      "content": {
-        "text": "Clucks cluck cluck cluck cluck cluck clucks cluck cluck cluck cluck cluck cluck cluck cluck cluck cluck cluck cluck cluck cluck cluck cluck!"
-      },
-      "created_at": 1461112232227
-    }
-  ]
 
   const createTweetElement = function(tweetOb) {
     const tweetContent = tweetOb.content.text;
@@ -57,38 +33,133 @@ $(document).ready(function() {
     const tweetAvatar = tweetOb.user.avatars;
     const tweetDate = tweetOb.created_at;
 
-    const $tweet = ` 
+
+    // Create consts to contruct the tweet article element
+
+    const $tweet = $(`<article class="tweet">`);
+
+
+    //// Header Consts ////
+
+    const $header = $(`<header>`);
+
+    const $posterName = $(`
+      <div class="poster-name">
+        <img class="poster-img" src=${tweetAvatar}>
+        <p> ${tweetUserName} </p>
+      </div>
+    `);
+
+    const $posterID = $(`
+      <div class="poster-id">
+        <p> ${tweetID} </p>
+      </div>
+    `);
+
+    const $headerClose = $(`</header>`);
+
+
+    // Construct header from consts
+    $header.append($posterName, $posterID, $headerClose);
+
+
+   //// Content Consts ////
+
+    const $tweetContainer = $(`<div class="tweet-text-box">`);
+
+    const $tweetText = $(`
+        <p class="tweet-text"> ${escape(tweetContent)} </p>
+      </div>
+    `);
+
+    // Construct content from consts
+    $tweetContainer.append($tweetText);
+
+
+   //// Footer Consts ////
+
+    const $footer = $(`<footer>`);
+
+    const $date = $(`            
+      <div class="date">
+        <span> ${timeago.format(tweetDate)} </span>
+      </div>
+    `)
+
+    const $icons = $(`<span class="icons">`);
+
+
+    // $flag and its .on events
+
+    const $flag = $(`<i class="flag fa-sharp fa-solid fa-flag"></i>`);
+
+    $flag.on("click", function() {
+      $(this).toggleClass("clicked");
+    });
+
+    $flag.on("mouseenter", function() {
+      $(this).addClass("hover");
+    });
+
+    $flag.on("mouseleave", function() {
+      $(this).removeClass("hover");
+    });
+
+
+    // $share and its .on events
+
+    const $share = $(`<i class="share fa-solid fa-retweet"></i>`);
+
+    $share.on("click", function() {
+      $(this).toggleClass("clicked");
+    });
+
+    $share.on("mouseenter", function() {
+      $(this).addClass("hover");
+    });
+
+    $share.on("mouseleave", function() {
+      $(this).removeClass("hover");
+    });
     
-      <article class="tweet">
 
-          <header>
-            <div class="poster-name" >
-              <img class="poster-img" src=${tweetAvatar} >
-              <p> ${tweetUserName} </p>
-          </div>
-          
-          <div class="poster-id">
-            <p> ${tweetID} </p>
-          </div>
-          </header>
+    // $like and its .on events
 
-          <div class="tweet-text-box">
-            <p class="tweet-text"> ${tweetContent} </p>
-          </div>
+    const $like = $(`<i class="like fa-solid fa-heart"></i>`);
 
-          <footer>
-            <div class="date">
-              <p> ${tweetDate} </p>
-            </div>
-            <div class="buttons">
-              <button class="flag" type="submit"><i class="fa-sharp fa-solid fa-flag"></i></button>
-              <button class="share" type="submit"><i class="fa-solid fa-retweet"></i></button>
-              <button class="like" type="submit"><i class="fa-solid fa-heart"></i></button>
-            </div>
-          </footer>
+    $like.on("click", function() {
+      $(this).toggleClass("clicked");
+    });
 
-        </article>
-    `
+    $like.on("mouseenter", function() {
+      $(this).addClass("hover");
+    });
+
+    $like.on("mouseleave", function() {
+      $(this).removeClass("hover");
+    });
+
+
+    const $iconsClose = $(`</span>`);
+
+
+    // Construct icons
+    $icons.append($flag, $share, $like, $iconsClose);
+
+
+    const $footerClose = $(`</footer>`);
+
+
+    // Construct footer
+    $footer.append($date, $icons, $footerClose);
+
+
+    const $articleClose = $(`</article>`);
+
+
+    // Construct tweet article element
+    $tweet.append($header, $tweetContainer, $footer, $articleClose);
+
 
     return $tweet;
   }
@@ -96,91 +167,76 @@ $(document).ready(function() {
 
  // RENDER TWEETS FUNCTION //
 
+ // clear info of already rendered tweets from the #tweet-container
  // Loop through tweets data object
  // Use createTweetElement to create tweet element for each tweet
  // Append the returned tweet elements to #tweet-container  
 
  const renderTweets = function(tweets) {
+  $("#tweet-container").empty();
   for (const tweet of tweets) {
     const returnValue = createTweetElement(tweet)
-    $(`#tweet-container`).append(returnValue)
+    $(`#tweet-container`).prepend(returnValue)
   }
 };
 
-renderTweets(data)
+  
+  // LOAD TWEETS FUNCTION //
+
+  const loadTweets = function() {
+    $.ajax("/tweets", { method: "GET" })
+    .then(function (tweet) {
+      renderTweets(tweet);
+    })
+  };
 
 
- // EVENT LISTENER FOR TWEET SUBMITS //
+  // Populate page with tweets
+
+  loadTweets();
+
+  
+  // EVENT LISTENER FOR TWEET SUBMITS //
 
  // Listen for new tweet submissions
 
   $("#submit-tweet").on("submit", function(event){
     event.preventDefault();
-    const tweetData = $(this).serialize();
+
+    $("#error-empty").slideUp("fast", "linear"); 
+    $("#error-long").slideUp("fast", "linear"); 
+
+    const maxChars = 140;
+    const tweetLength = $(this).find("#tweet-text").val().length;
+
+    // Check if tweet has content
+
+    if (tweetLength === 0) {  
+      $("#error-empty").slideDown("fast", "linear");    
+    } 
     
+    // Check if tweet is more than 140 characters
 
-    // Post tweet data to the server
+    else if (tweetLength > maxChars) {
+      $("#error-long").slideDown("fast", "linear");
+    }
 
-    $.post("/tweets", tweetData);
+    // If tweet passes the above checks, post tweet data to the server and load new tweet to page
 
+    else {      
+      const tweetData = $(this).serialize();
+      $.post("/tweets", tweetData, () => {
+        loadTweets();
+
+        $("#error-empty").slideUp("fast", "linear");
+        $("#error-long").slideUp("fast", "linear");
+
+        // Reset input box and counter values
+
+        $("#tweet-text").val("")
+        $(".counter").val(maxChars);
+    });
+    }
   });
 
-
-
-
-
-
-  //OLD TWEETS .ON EVENTS //
-
-  // Hover drop-box for old tweets //
-
-  $(".tweet").on("mouseenter", function() {
-    $(this).addClass("hover");
-  });
-  $(".tweet").on("mouseleave", function(){
-    $(this).removeClass("hover");
-  });
-
-  // Hover color-change for flag, retweet and like //
-
-  $(".flag").on("mouseenter", function() {
-    $(this).addClass("glow");
-  });
-
-  $(".flag").on("mouseleave", function() {
-    $(this).removeClass("glow");
-  });
-
-  $(".share").on("mouseenter", function() {
-    $(this).addClass("glow");
-  });
-
-  $(".share").on("mouseleave", function() {
-    $(this).removeClass("glow");
-  });
-
-  $(".like").on("mouseenter", function() {
-    $(this).addClass("glow");
-  });
-
-  $(".like").on("mouseleave", function() {
-    $(this).removeClass("glow");
-  });
-
-
-  // Toggle flag, retweet and heart between clicked and unclicked states
-
-  $(".flag").on("click", function() {
-    $(this).toggleClass("clicked");
-  });
-  
-  $(".share").on("click", function() {
-    $(this).toggleClass("clicked");
-  });
-  
-  $(".like").on("click", function() {
-    $(this).toggleClass("clicked");
-  });
-
-  
 });

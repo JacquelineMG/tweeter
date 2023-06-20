@@ -32,7 +32,7 @@ margin: 6px;
 margin-top: 16px;
 font-weight: 300;
 font-size: 25px;
-font-family: 'Source Code Pro', 'sans-serif';
+font-family: 'Source Sans 3', 'sans-serif';
 color: black;
 }
 
@@ -47,7 +47,7 @@ margin: 6px;
 margin-top: 16px;
 font-weight: 600;
 font-size: 25px;
-font-family: 'Source Code Pro', 'sans-serif';
+font-family: 'Source Sans 3', 'sans-serif';
 color: rgb(159, 157, 157);
 }
 
@@ -62,7 +62,7 @@ color: rgb(159, 157, 157);
   border-bottom: 5px solid black;
   width: 85vw;
   height: auto;
-  font-family: 'Source Code Pro', 'sans-serif';
+  font-family: 'Source Sans 3', 'sans-serif';
   font-size: 20px;
   color:black;
   font-weight: 600;
@@ -75,7 +75,7 @@ color: rgb(159, 157, 157);
 
 .date {
   font-size: 15px;
-  font-family:'Source Code Pro', 'sans-serif';
+  font-family:'Source Sans 3', 'sans-serif';
   font-weight: 600;
   padding-left: 15px;
 }

@@ -2,7 +2,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  font-family: 'Source Code Pro', 'sans-serif';
+  font-family: 'Source Sans 3', 'sans-serif';
   color: black;
   font-weight: 300;
   width: 90%;
@@ -67,7 +67,7 @@ footer {
 
 #error-empty {
   border: 2px solid red;
-  font-family: 'Source Code Pro', 'sans-serif';
+  font-family: 'Source Sans 3', 'sans-serif';
   font-size: 20px;
   font-weight: 600;
   color: red;
@@ -77,7 +77,7 @@ footer {
 
 #error-long {
   border: 2px solid red;
-  font-family: 'Source Code Pro', 'sans-serif';
+  font-family: 'Source Sans 3', 'sans-serif';
   font-size: 20px;
   font-weight: 600;
   color: red;

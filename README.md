@@ -2,7 +2,7 @@
 
 Tweeter is a simple, single-page Twitter clone that allows users to post messages to their Tweeter feed. 
 
-Tweeter has a dynamic design that adapts for small screens.
+Tweeter has a responsive design that adapts for small screens.
 
 ## Final Product
 
@@ -13,7 +13,7 @@ Tweeter has a dynamic design that adapts for small screens.
 !["Working with Tweeter"](https://github.com/JacquelineMG/tweeter/blob/master/docs/screenshot-error.png)
 
 
-#### Tweeter adapts to small screen sizes.
+#### Tweeter has a responsive design to adapt to small screen sizes.
 !["Tweeter for Handheld Devices"](https://github.com/JacquelineMG/tweeter/blob/master/docs/screenshot-dynamic-small.png)
 
 

@@ -6,17 +6,17 @@ Tweeter has a dynamic design that adapts for small screens.
 
 ## Final Product
 
+#### Tweeter has a clean, single-page design.
 !["Tweeter For Desktop"](https://github.com/JacquelineMG/tweeter/blob/master/public/images/screenshot.png)
 
-##### Tweeter has a clean, single-page design.
-
+#### Tweeter is easy to use.
 !["Working with Tweeter"](https://github.com/JacquelineMG/tweeter/blob/master/public/images/screenshot-error.png)
 
-##### Tweeter is easy to use.
 
+#### Tweeter adapts to small screen sizes.
 !["Tweeter for Handheld Devices"](https://github.com/JacquelineMG/tweeter/blob/master/public/images/screenshot-dynamic-small.png)
 
-##### Tweeter adapts to small screen sizes.
+
 
 
 ## Getting Started

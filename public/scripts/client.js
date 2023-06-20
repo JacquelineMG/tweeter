@@ -44,9 +44,9 @@ $(document).ready(function() {
     const $header = $(`<header>`);
 
     const $posterName = $(`
-      <div class="poster-name">
+      <div class="poster-info">
         <img class="poster-img" src=${tweetAvatar}>
-        <p> ${tweetUserName} </p>
+        <p class="poster-name"> ${tweetUserName} </p>
       </div>
     `);
 
@@ -81,8 +81,8 @@ $(document).ready(function() {
     const $footer = $(`<footer>`);
 
     const $date = $(`            
-      <div class="date">
-        <span> ${timeago.format(tweetDate)} </span>
+      <div>
+        <span class="date"> ${timeago.format(tweetDate)} </span>
       </div>
     `)
 

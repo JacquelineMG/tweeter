@@ -1,13 +1,14 @@
-main.container {
+.container {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   font-family: 'Source Code Pro', 'sans-serif';
   color: black;
   font-weight: 300;
+  width: 90%;
 }
 
-main.container ::placeholder {
+.container ::placeholder {
   font-weight: 600;
   font-size: 25px;
   color: rgb(107, 106, 106);
@@ -84,5 +85,17 @@ footer {
   padding: 10px;
 }
 
+@media only screen and (min-width: 1024px) {
+  .container {
+    display: flex;
+    align-items: flex-end;
+    width: 70vw;
+    margin-top: 170px;
+    margin-right: 2em;
+  }
 
+  #tweet-text {
+    width: 60vw;
+  }
+}
 

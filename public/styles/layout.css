@@ -23,7 +23,7 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Code Pro', 'sans-serif';
-  width: 97.8vw;
+  width: 98.5vw;
 }
 
 main {
@@ -37,3 +37,14 @@ main {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ @media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    align-items:flex-start;
+    justify-content: space-between;
+  }
+}
+
+

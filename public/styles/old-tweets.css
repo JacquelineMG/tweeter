@@ -1,5 +1,6 @@
 .tweet {
   border: 5px solid black;
+  border-radius: 10px;
   padding: 1em;
   width: 90vw;
   margin-top: 10px;
@@ -7,10 +8,10 @@
 }
 
 .tweet:hover {
-  box-shadow: 5px 5px 5px #e9b24c;
+  box-shadow: 5px 5px 5px #eaa92f;
 }
 
-#tweet-container .poster-name {
+.poster-info {
   display: flex;
   flex-direction: row;
 }
@@ -20,13 +21,13 @@
   justify-content: space-between;
 }
 
-#tweet-container footer {
+footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between ;
 } 
 
-.poster-name p{
+.poster-name {
 margin: 6px;
 margin-top: 16px;
 font-weight: 300;
@@ -35,7 +36,7 @@ font-family: 'Source Code Pro', 'sans-serif';
 color: black;
 }
 
-.poster-name .poster-img {
+.poster-img {
   width: 60px;
   height: 60px;
   margin: 3px;
@@ -68,18 +69,18 @@ color: rgb(159, 157, 157);
   padding-left: 2px;
   padding-right: 2px;
   padding-bottom: 15px;
-  margin-top: 40px
+  margin-top: 40px;
 }
 
 
-footer .date span {
+.date {
   font-size: 15px;
   font-family:'Source Code Pro', 'sans-serif';
   font-weight: 600;
   padding-left: 15px;
 }
 
-footer .icons {
+.icons {
   padding-right: 15px;
 }
 
@@ -111,12 +112,18 @@ footer .icons {
 }
 
 .hover {
-  color: #e9b24c
+  color: #eaa92f
 }
 
 .clicked {
   color: #4056A1;
 }
 
+
+@media only screen and (min-width: 1024px) {
+  .tweet {
+    width: 60vw;
+  }
+}
 
 

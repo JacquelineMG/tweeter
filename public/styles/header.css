@@ -1,3 +1,5 @@
+/* Style sheet for header elements */
+
 #page-header {
   height: 520px;
   width: 100vw;
@@ -41,4 +43,5 @@
   #user-name {
     font-size: 2vw;
   }
+
 }

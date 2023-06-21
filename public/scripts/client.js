@@ -14,8 +14,8 @@ $(document).ready(function() {
 
 
   // ESCAPE FUNCTION //
-
-  const escape = function (str) {
+  
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -63,7 +63,7 @@ $(document).ready(function() {
     $header.append($posterName, $posterID, $headerClose);
 
 
-   //// Content Consts ////
+    //// Content Consts ////
 
     const $tweetContainer = $(`<div class="tweet-text-box">`);
 
@@ -76,7 +76,7 @@ $(document).ready(function() {
     $tweetContainer.append($tweetText);
 
 
-   //// Footer Consts ////
+    //// Footer Consts ////
 
     const $footer = $(`<footer>`);
 
@@ -84,7 +84,7 @@ $(document).ready(function() {
       <div>
         <span class="date"> ${timeago.format(tweetDate)} </span>
       </div>
-    `)
+    `);
 
     const $icons = $(`<span class="icons">`);
 
@@ -162,32 +162,32 @@ $(document).ready(function() {
 
 
     return $tweet;
-  }
+  };
 
 
- // RENDER TWEETS FUNCTION //
-
- // clear info of already rendered tweets from the #tweet-container
- // Loop through tweets data object
- // Use createTweetElement to create tweet element for each tweet
- // Append the returned tweet elements to #tweet-container  
-
- const renderTweets = function(tweets) {
-  $("#tweet-container").empty();
-  for (const tweet of tweets) {
-    const returnValue = createTweetElement(tweet)
-    $(`#tweet-container`).prepend(returnValue)
-  }
-};
+  // RENDER TWEETS FUNCTION //
+  
+  // clear info of already rendered tweets from the #tweet-container
+  // Loop through tweets data object
+  // Use createTweetElement to create tweet element for each tweet
+  // Append the returned tweet elements to #tweet-container
+  
+  const renderTweets = function(tweets) {
+    $("#tweet-container").empty();
+    for (const tweet of tweets) {
+      const returnValue = createTweetElement(tweet);
+      $(`#tweet-container`).prepend(returnValue);
+    }
+  };
 
   
   // LOAD TWEETS FUNCTION //
 
   const loadTweets = function() {
     $.ajax("/tweets", { method: "GET" })
-    .then(function (tweet) {
-      renderTweets(tweet);
-    })
+      .then(function(tweet) {
+        renderTweets(tweet);
+      });
   };
 
 
@@ -197,25 +197,27 @@ $(document).ready(function() {
 
   
   // EVENT LISTENER FOR TWEET SUBMITS //
+  
+  // Listen for new tweet submissions
 
- // Listen for new tweet submissions
-
-  $("#submit-tweet").on("submit", function(event){
+  $("#submit-tweet").on("submit", function(event) {
     event.preventDefault();
 
-    $("#error-empty").slideUp("fast", "linear"); 
-    $("#error-long").slideUp("fast", "linear"); 
+    // Hide any error messages
+
+    $("#error-empty").slideUp("fast", "linear");
+    $("#error-long").slideUp("fast", "linear");
 
     const maxChars = 140;
     const tweetLength = $(this).find("#tweet-text").val().length;
 
-    // Check if tweet has content
+    // Check if tweet has content -- if not, display error message
 
-    if (tweetLength === 0) {  
-      $("#error-empty").slideDown("fast", "linear");    
-    } 
+    if (tweetLength === 0) {
+      $("#error-empty").slideDown("fast", "linear");
+    }
     
-    // Check if tweet is more than 140 characters
+    // Check if tweet is more than 140 characters -- if so, display error message
 
     else if (tweetLength > maxChars) {
       $("#error-long").slideDown("fast", "linear");
@@ -223,19 +225,21 @@ $(document).ready(function() {
 
     // If tweet passes the above checks, post tweet data to the server and load new tweet to page
 
-    else {      
+    else {
       const tweetData = $(this).serialize();
       $.post("/tweets", tweetData, () => {
         loadTweets();
+
+        // Hide any error messages
 
         $("#error-empty").slideUp("fast", "linear");
         $("#error-long").slideUp("fast", "linear");
 
         // Reset input box and counter values
 
-        $("#tweet-text").val("")
+        $("#tweet-text").val("");
         $(".counter").val(maxChars);
-    });
+      });
     }
   });
 

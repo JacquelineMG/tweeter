@@ -1,3 +1,5 @@
+/* Style sheet for old tweet elements */
+
 .tweet {
   border: 5px solid black;
   border-radius: 10px;
@@ -15,6 +17,7 @@
   display: flex;
   flex-direction: row;
 }
+
 #tweet-container header {
   display: flex;
   flex-direction: row;
@@ -72,7 +75,6 @@ color: rgb(159, 157, 157);
   margin-top: 40px;
 }
 
-
 .date {
   font-size: 15px;
   font-family:'Source Sans 3', 'sans-serif';
@@ -121,9 +123,10 @@ color: rgb(159, 157, 157);
 
 
 @media only screen and (min-width: 1024px) {
+
   .tweet {
     width: 60vw;
   }
+  
 }
-
 

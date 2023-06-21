@@ -1,3 +1,5 @@
+/* Style sheet for navigation bar elements */
+
 nav {
   height: 120px;
   width: 100vw;
@@ -9,6 +11,7 @@ nav {
   background-color: #eaa92f;
   background-image: url("/images/swirl.png");
   font-family: 'Source Sans 3', 'sans-serif';
+  padding: 1.5em;
 }
 
 #logo {
@@ -16,8 +19,7 @@ nav {
   justify-content: center;
   align-items: center;
   font-family: 'Bungee', 'sans-serif';
-  font-size: 200%;
-  padding-left: 0.5em;
+  font-size: 38px;
 }
 
 .right-nav {
@@ -25,8 +27,8 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-right: 1em;
   padding-left: 1em;
+  font-size: 20px;
 }
 
 #nav-arrows {
@@ -35,6 +37,7 @@ nav {
 
 
 @media only screen and (min-width: 1024px) {
+
   nav {
     height: 120px;
     width: 100vw;
@@ -43,14 +46,13 @@ nav {
     background-color: #4056A1;
     background-image: url("/images/bright-squares.png");
     color: #FFFFFF;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
     display: flex;  
     justify-content: space-between;
     margin-bottom: 10px;
   }
 
   .right-nav {
-    margin-right: 1em;
+    font-size: 24px;
   }
+
 }

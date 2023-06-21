@@ -14,7 +14,6 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
@@ -22,7 +21,6 @@
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/old-tweets.css" type="text/css" />
    
-
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -34,34 +32,31 @@
   </head>
 
   <body>
-    <!-- Top nav bar (fixed) -->
+    <!-- Nav bar elements -->
     <nav>
       <span id="logo">tweeter</span>
-      
       <div class="right-nav">
         <span><b>Write</b> a new tweet</span>
         <span><i id="nav-arrows" class="fa-solid fa-angles-down"></i></span>
       </div>
-
     </nav>
 
-
+    <!-- Header elements  -->
     <header id="page-header">
       <div id="user-avatar">
-          <img src="/images/bird-avatar-owl-d.png"> 
+        <a href="https://www.freepik.com/free-vector/hand-drawn-animal-avatars-element-collection_32451341.htm#query=avatar%20bird&position=10&from_view=search&track=ais"><img src="/images/bird-avatar-owl-d.png"></a>
       </div>
       <br>
       <div>
-          <p id="user-name"><b>Socrates</b> D'Alopece</p>
+        <p id="user-name"><b>Socrates</b> D'Alopece</p>
       </div>
-  </header>
-
-
+    </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet">
 
+      <!-- New tweet elements -->
+      <section class="new-tweet">
         <div class="error-messages">
           <span id="error-long">
             <i class="fa-solid fa-triangle-exclamation" style="color: #ff0000;"></i>
@@ -69,7 +64,6 @@
             <i class="fa-solid fa-triangle-exclamation" style="color: #ff0000;"></i>
           </span>
         </div>
-      
         <div class="error-messages">
           <span id="error-empty">
             <i class="fa-solid fa-triangle-exclamation" style="color: #ff0000;"></i>
@@ -77,8 +71,6 @@
             <i class="fa-solid fa-triangle-exclamation" style="color: #ff0000;"></i>
           </span>
         </div>
-
-
         <h2 class="sub-heading">Compose A Tweet</h2>
         <form class="submit" method="POST" action="/tweets" id="submit-tweet">
           <textarea name="text" id="tweet-text" placeholder="What are you chirping about?"></textarea>
@@ -89,10 +81,9 @@
         </form>
       </section>
 
+      <!-- Old tweets section -->
       <section id="tweet-container">
-
         <!-- New tweets prepended here to tweet history -->
-
       </section>
 
     </main>

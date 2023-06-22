@@ -67,6 +67,16 @@ footer {
   justify-content: center;
 }
 
+#load-error {
+  border: 2px solid red;
+  font-family: 'Source Sans 3', 'sans-serif';
+  font-size: 20px;
+  font-weight: 600;
+  color: red;
+  margin: 10px;
+  padding: 10px;
+}
+
 #error-empty {
   border: 2px solid red;
   font-family: 'Source Sans 3', 'sans-serif';

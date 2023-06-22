@@ -9,6 +9,7 @@ $(document).ready(function() {
 
   // Hide error messages when user is behaving
 
+  $("#load-error").hide();
   $("#error-empty").hide();
   $("#error-long").hide();
 
@@ -184,10 +185,16 @@ $(document).ready(function() {
   // LOAD TWEETS FUNCTION //
 
   const loadTweets = function() {
-    $.ajax("/tweets", { method: "GET" })
+    try {
+      $("#load-error").hide();
+      $.ajax("/tweets", { method: "GET" })
       .then(function(tweet) {
         renderTweets(tweet);
       });
+    } catch (err) {
+      $("#load-error").slideDown("fast", "linear");
+      console.log(err)
+    }
   };
 
 
@@ -205,11 +212,12 @@ $(document).ready(function() {
 
     // Hide any error messages
 
+    $("#load-error").hide();
     $("#error-empty").slideUp("fast", "linear");
     $("#error-long").slideUp("fast", "linear");
 
     const maxChars = 140;
-    const tweetLength = $(this).find("#tweet-text").val().length;
+    const tweetLength = $(this).find("#tweet-text").val().trim().length;
 
     // Check if tweet has content -- if not, display error message
 
@@ -226,20 +234,27 @@ $(document).ready(function() {
     // If tweet passes the above checks, post tweet data to the server and load new tweet to page
 
     else {
-      const tweetData = $(this).serialize();
-      $.post("/tweets", tweetData, () => {
-        loadTweets();
+      try {
+        const tweetData = $(this).serialize();
+        $.post("/tweets", tweetData, () => {
+          loadTweets();
 
-        // Hide any error messages
+          // Hide any error messages
 
-        $("#error-empty").slideUp("fast", "linear");
-        $("#error-long").slideUp("fast", "linear");
+          $("#load-error").hide();
+          $("#error-empty").slideUp("fast", "linear");
+          $("#error-long").slideUp("fast", "linear");
+  
+          // Reset input box and counter values
+  
+          $("#tweet-text").val("");
+          $(".counter").val(maxChars);
+        });
 
-        // Reset input box and counter values
-
-        $("#tweet-text").val("");
-        $(".counter").val(maxChars);
-      });
+      } catch (err) {
+        $("#load-error").slideDown("fast", "linear");
+        console.log(err);
+      }
     }
   });
 
